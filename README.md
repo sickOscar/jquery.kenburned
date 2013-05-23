@@ -1,7 +1,7 @@
 jquery.kenburns
 ===============
 
-A jQuery plugin to create fullscreen background slideshows with kenburns effect. It uses CANVAS. Based on the work of [Will McGugan](http://www.willmcgugan.com/2011/2/26/ken-burns-effect-with-javascript-and-canvas/).
+A jQuery plugin to create fullscreen background slideshows with kenburns effect. It uses CANVAS. Based on the work of [Will McGugan](http://www.willmcgugan.com/2011/2/26/ken-burns-effect-with-javascript-and-canvas/). 
 
 ##Installation
 
@@ -33,12 +33,13 @@ Include some basic style
         z-index: -2;
     }
 
+##Usage
 
 Activate the plugin on DOM ready state
 
 
     $(document).ready(function() {
-        $('#kb-container').kenburns({
+        var kb = $('#kb-container').kenburns({
             [[options]]
         });
     });
@@ -50,7 +51,7 @@ Options are available to customize the behavior of the plugin. See the demo incl
 
 ####images
 
-Array of paths of images to include. This is obviously mandatory.
+Array of paths of images to include. This is obviously mandatory. Order of images matters.
 
 ####display_time
 
@@ -72,8 +73,24 @@ The fill color of the underlying canvas. (HEX value)
 
 Zoom value. Pretty easy.
 
+##Methods
+
+There are some methods available to call on the object returned from the plugin activation. 
+
+####nextSlide()
+
+Fades out, reset the animation and restart with the next image first.
+
+####prevSlide()
+
+Same as nextSlide() but with the previous image
+
+##TODO
+
+I'd like to transform this and make it a jQuery Cycle plugin variation. Suggestions are welcome.
+
 
 ##License
 
-The code is available on github under GPL License
+The code is available on [GitHub](https://github.com/sickDevelopers/jquery.kenburned) under GPL License.
 

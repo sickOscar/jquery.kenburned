@@ -257,6 +257,10 @@
                 }
             },
 
+            /**
+             * Move to the next Image
+             * @return {[type]} [description]
+             */
             nextSlide : function() {
                 var currentFrame = Math.floor(get_time() / (display_time - fade_time));
                 var that = this;
@@ -286,6 +290,11 @@
 
             },
 
+
+            /**
+             * Move to the previous Image
+             * @return {[type]} [description]
+             */
             prevSlide : function() {
                 var currentFrame = Math.floor(get_time() / (display_time - fade_time));
                 var that = this;

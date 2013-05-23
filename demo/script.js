@@ -33,5 +33,14 @@ $(document).ready(function() {
             ]
         });
 
+    $('.prev-slide').click(function(ev) {
+        ev.preventDefault();
+        kb.prevSlide();
+    });
+
+    $('.next-slide').click(function(ev) {
+        ev.preventDefault();
+        kb.nextSlide();
+    });
 
 });
