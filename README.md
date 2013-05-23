@@ -87,8 +87,8 @@ Same as nextSlide() but with the previous image
 
 ##TODO
 
-I'd like to transform this and make it a jQuery Cycle plugin variation. Suggestions are welcome.
-
++ I'd like to transform this and make it a jQuery Cycle plugin variation. Suggestions are welcome.
++ Compiled now with Codekit for MacOS. It would be great to add a build script. 
 
 ##License
 

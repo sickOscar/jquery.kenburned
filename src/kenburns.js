@@ -121,6 +121,12 @@
             return [x, y, x+w, y+h];
         }
 
+        /**
+         * Image Preloading
+         * @param  int image_index  index in the images array fo the element to preload
+         * @param  function load_callback function to call on load complete
+         * @return object              image object
+         */
         function get_image_info(image_index, load_callback) {
             // Gets information structure for a given index
             // Also loads the image asynchronously, if required     
@@ -171,6 +177,13 @@
             return image_info;
         }
 
+        /**
+         * Renders a frame of the animation
+         * @param  {[type]} image_index [description]
+         * @param  {[type]} anim        [description]
+         * @param  {[type]} fade        [description]
+         * @return {[type]}             [description]
+         */
         function render_image(image_index, anim, fade) {
 
             // If rendering first image
@@ -197,6 +210,10 @@
             }
         }
 
+        /**
+         * Clear canvas
+         * @return {[type]} [description]
+         */
         function clear() {
             // Clear the canvas
             ctx.save();
@@ -206,6 +223,10 @@
             ctx.restore();
         }
 
+        /**
+         * Updates animation
+         * @return {[type]} [description]
+         */
         function update() {
             // Render the next frame                                        
             var update_time = get_time();
@@ -238,6 +259,11 @@
             get_image_info(preload_image);
         }
 
+        /**
+         * Gets always a correct index
+         * @param  {[type]} i [description]
+         * @return {[type]}   [description]
+         */
         function wrap_index(i) {
             return (i + images.length) % images.length;
         }
@@ -283,6 +309,7 @@
 
                     reset_time_values();
 
+                    // restarts all over from the new image
                     start_time = get_time();
                     main_interval = setInterval(update, frame_time);
 
@@ -316,6 +343,7 @@
 
                     reset_time_values();
 
+                    // restart all over from the new image
                     start_time = get_time();
                     main_interval = setInterval(update, frame_time);
 
