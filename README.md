@@ -1,7 +1,7 @@
 jquery.kenburns
 ===============
 
-A jQuery plugin to create fullscreen background slideshows with kenburns effect. It uses CANVAS. Based on the work of Will McGugan.
+A jQuery plugin to create fullscreen background slideshows with kenburns effect. It uses CANVAS. Based on the work of [Will McGugan](http://www.willmcgugan.com/2011/2/26/ken-burns-effect-with-javascript-and-canvas/).
 
 ##Installation
 
@@ -24,6 +24,16 @@ Add the foolowing markup to you HTML body. The element id may change as you wish
     <canvas id="kb-container"></canvas>
 
 
+Include some basic style
+
+    #kb-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: -2;
+    }
+
+
 Activate the plugin on DOM ready state
 
 
@@ -40,12 +50,30 @@ Options are available to customize the behavior of the plugin. See the demo incl
 
 ####images
 
-Array of images to include. This is obviously mandatory.
+Array of paths of images to include. This is obviously mandatory.
+
+####display_time
+
+The duration of the animation, i.e. how long every image stays visible on screen
+
+####fade_time
+
+The duration of the transition between images
+
+####frame_per_second
+
+This option affects performances. A value of 20 makes sure the perception of fluid animation. It is better to adjust this value considering the device.
+
+####background_color
+
+The fill color of the underlying canvas. (HEX value)
+
+####zoom
+
+Zoom value. Pretty easy.
 
 
 ##License
 
 The code is available on github under GPL License
-=======
-Based on Will McGugan kenburns code, a jQuery plugin to create fullscreen background slideshows with kenburns effect
 
