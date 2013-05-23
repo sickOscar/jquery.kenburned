@@ -6,6 +6,8 @@
     
     Modified by Oscar Chinellato - 2013 - SickDevelopers - http://www.sickdevelopers.com/blog
 
+    VERSION : 0.2
+
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU Affero General Public License as
     published by the Free Software Foundation, either version 3 of the
