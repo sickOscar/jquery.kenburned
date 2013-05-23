@@ -1,0 +1,19 @@
+html, body {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: Helvetica, Arial, sans-serif;
+	background: 000;
+}
+
+.container {
+	color: #fff;
+	width: 60%;
+	margin: 30px auto;
+	text-align: center;
+	padding: 30px;
+	background: #000;
+	background: rgba(0,0,0,0.4);
+}
