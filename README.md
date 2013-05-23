@@ -46,3 +46,6 @@ Array of images to include. This is obviously mandatory.
 ##License
 
 The code is available on github under GPL License
+=======
+Based on Will McGugan kenburns code, a jQuery plugin to create fullscreen background slideshows with kenburns effect
+
