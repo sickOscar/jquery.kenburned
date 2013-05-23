@@ -3,6 +3,8 @@ jquery.kenburns
 
 A jQuery plugin to create fullscreen background slideshows with kenburns effect. It uses CANVAS. Based on the work of [Will McGugan](http://www.willmcgugan.com/2011/2/26/ken-burns-effect-with-javascript-and-canvas/). 
 
+Tested only with Google Chrome.
+
 ##Installation
 
 Include jQuery and import the plugin code as usual (better if in the footer for better performance)
@@ -15,7 +17,7 @@ Include jQuery and import the plugin code as usual (better if in the footer for 
             document.write(unescape("%3Cscript src='jquery.min.js' type='text/javascript'%3E%3C/script%3E"));
         }
     </script>
-    <script src="../kenburns-0.1.min.js"></script>
+    <script src="path/to/plugin/kenburns.min.js"></script>
 
 
 Add the foolowing markup to you HTML body. The element id may change as you wish (or need)
@@ -39,6 +41,11 @@ Activate the plugin on DOM ready state
 
 
     $(document).ready(function() {
+
+        // set the dimensions of the Canvas to fullscreen
+        $canvas.attr('width', $(window).width());
+        $canvas.attr('height', $(window).height());
+
         var kb = $('#kb-container').kenburns({
             [[options]]
         });
@@ -84,6 +91,14 @@ Fades out, reset the animation and restart with the next image first.
 ####prevSlide()
 
 Same as nextSlide() but with the previous image
+
+##Resize
+
+On resizing, the canvas stays the same dimensions. To resize the canvas you have to reset the plugin.
+
+##Variations
+
+It is possible to apply the plugin also to fixed-dimensions containers. Just call the plugin on a canvas of the size you want.
 
 ##TODO
 
