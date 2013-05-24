@@ -24,7 +24,7 @@
 
 ;(function($, undefined){
 
-    $.fn.kenburns = function(options) {
+    $.fn.kenburned = function(options) {
 
         var $canvas = $(this);
         var ctx = this[0].getContext('2d');

@@ -23,7 +23,7 @@ $(document).ready(function() {
     $canvas.attr('width', $(window).width());
     $canvas.attr('height', $(window).height());
 
-    var kb = $canvas.kenburns({
+    var kb = $canvas.kenburned({
             images : [
                 "http://lorempixel.com/1200/900/sports/1",
                 "http://lorempixel.com/1200/900/sports/2",
