@@ -1,9 +1,9 @@
 /*
 
-    Based on 
+    Based on
     Ken Burns effect JQuery plugin
     Copyright (C) 2011 Will McGugan http://www.willmcgugan.com
-    
+
     Modified by Oscar Chinellato - 2013 - SickDevelopers - http://www.sickdevelopers.com/blog
 
     VERSION : 0.2
@@ -61,8 +61,8 @@
         });
 
         /**
-         * Reset time values 
-         * @return 
+         * Reset time values
+         * @return
          */
         function reset_time_values() {
             start_time = null;
@@ -129,7 +129,7 @@
          */
         function get_image_info(image_index, load_callback) {
             // Gets information structure for a given index
-            // Also loads the image asynchronously, if required     
+            // Also loads the image asynchronously, if required
             var image_info = images[image_index];
             if (!image_info.initialized) {
                 var image = new Image();
@@ -192,7 +192,7 @@
                 $canvas.hide().fadeIn(2000, function() {});
             }
 
-            // Renders a frame of the effect    
+            // Renders a frame of the effect
             if (anim > 1) {
                 return;
             }
@@ -228,7 +228,7 @@
          * @return {[type]} [description]
          */
         function update() {
-            // Render the next frame                                        
+            // Render the next frame
             var update_time = get_time();
 
             var top_frame = Math.floor(update_time / (display_time - fade_time));
@@ -268,7 +268,7 @@
             return (i + images.length) % images.length;
         }
 
-        // Pre-load the first two images then start a timer 
+        // Pre-load the first two images then start a timer
         get_image_info(0, function(){
             start_time = get_time();
             main_interval = setInterval(update, frame_time);
@@ -356,4 +356,3 @@
     };
 
 })( jQuery, undefined );
-
