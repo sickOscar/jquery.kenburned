@@ -52,13 +52,22 @@
 
         // array of images
         var images = [];
-        $(image_paths).each(function(i, image_path){
-            images.push({
-                path:image_path,
-                initialized:false,
-                loaded:false
+        load_images();
+
+        /**
+         * Load the images
+         * @return
+         */
+        function load_images() {
+            images = [];
+            $(image_paths).each(function(i, image_path){
+                images.push({
+                    path:image_path,
+                    initialized:false,
+                    loaded:false
+                });
             });
-        });
+        }
 
         /**
          * Reset time values
@@ -284,6 +293,12 @@
                     $canvas.fadeIn(1000);
                 }
             },
+
+            /**
+             * Reload the images
+             * @return
+             */
+            reload : load_images,
 
             /**
              * Move to the next Image
