@@ -301,6 +301,18 @@
             reload : load_images,
 
             /**
+             * Resize the canvas
+             * @return
+             */
+            resize : function(w, h) {
+                $canvas.attr('width', w);
+                $canvas.attr('height', h);
+                width = $canvas.width = w;
+                height = $canvas.height = h;
+                this.reload();
+            },
+
+            /**
              * Move to the next Image
              * @return {[type]} [description]
              */
