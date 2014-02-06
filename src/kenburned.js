@@ -1,9 +1,9 @@
 /*
 
-    Based on 
+    Based on
     Ken Burns effect JQuery plugin
     Copyright (C) 2011 Will McGugan http://www.willmcgugan.com
-    
+
     Modified by Oscar Chinellato - 2013 - SickDevelopers - http://www.sickdevelopers.com/blog
 
     VERSION : 0.2
@@ -52,17 +52,26 @@
 
         // array of images
         var images = [];
-        $(image_paths).each(function(i, image_path){
-            images.push({
-                path:image_path,
-                initialized:false,
-                loaded:false
-            });
-        });
+        load_images();
 
         /**
-         * Reset time values 
-         * @return 
+         * Load the images
+         * @return
+         */
+        function load_images() {
+            images = [];
+            $(image_paths).each(function(i, image_path){
+                images.push({
+                    path:image_path,
+                    initialized:false,
+                    loaded:false
+                });
+            });
+        }
+
+        /**
+         * Reset time values
+         * @return
          */
         function reset_time_values() {
             start_time = null;
@@ -129,7 +138,7 @@
          */
         function get_image_info(image_index, load_callback) {
             // Gets information structure for a given index
-            // Also loads the image asynchronously, if required     
+            // Also loads the image asynchronously, if required
             var image_info = images[image_index];
             if (!image_info.initialized) {
                 var image = new Image();
@@ -192,7 +201,7 @@
                 $canvas.hide().fadeIn(2000, function() {});
             }
 
-            // Renders a frame of the effect    
+            // Renders a frame of the effect
             if (anim > 1) {
                 return;
             }
@@ -228,7 +237,7 @@
          * @return {[type]} [description]
          */
         function update() {
-            // Render the next frame                                        
+            // Render the next frame
             var update_time = get_time();
 
             var top_frame = Math.floor(update_time / (display_time - fade_time));
@@ -268,7 +277,7 @@
             return (i + images.length) % images.length;
         }
 
-        // Pre-load the first two images then start a timer 
+        // Pre-load the first two images then start a timer
         get_image_info(0, function(){
             start_time = get_time();
             main_interval = setInterval(update, frame_time);
@@ -283,6 +292,24 @@
                 fadeIn : function() {
                     $canvas.fadeIn(1000);
                 }
+            },
+
+            /**
+             * Reload the images
+             * @return
+             */
+            reload : load_images,
+
+            /**
+             * Resize the canvas
+             * @return
+             */
+            resize : function(w, h) {
+                $canvas.attr('width', w);
+                $canvas.attr('height', h);
+                width = $canvas.width = w;
+                height = $canvas.height = h;
+                this.reload();
             },
 
             /**
@@ -356,4 +383,3 @@
     };
 
 })( jQuery, undefined );
-
